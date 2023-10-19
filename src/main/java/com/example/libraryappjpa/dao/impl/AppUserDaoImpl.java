@@ -46,4 +46,19 @@ public class AppUserDaoImpl implements AppUserDao {
             entityManager.remove(appUser);
         }
     }
+
+    @Override
+    @Transactional
+    public void deleteWithDetails(int userId) {
+        AppUser user = findById(userId);
+        if (user != null) {
+            if (user.getDetails() != null) {
+                entityManager.remove(user.getDetails());
+            }
+            entityManager.remove(user);
+        }
+    }
+
+
+
 }

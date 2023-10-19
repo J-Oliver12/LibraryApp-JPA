@@ -159,13 +159,10 @@ public class LibraryAppJpaApplication implements CommandLineRunner {
         int userId = scanner.nextInt();
         scanner.nextLine();
 
-        AppUser foundUser = appUserDao.findById(userId);
-        if (foundUser != null) {
-            appUserDao.delete(userId);
-            System.out.println("User deleted successfully.");
-        } else {
-            System.out.println("User not found with the given userId.");
-        }
+        appUserDao.deleteWithDetails(userId);
+        System.out.println("User and associated details deleted successfully.");
     }
+
 }
+
 
