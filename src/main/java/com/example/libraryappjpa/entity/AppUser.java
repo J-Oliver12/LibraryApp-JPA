@@ -4,10 +4,10 @@ import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.GenericGenerator;
 
 import java.time.LocalDate;
-import java.util.UUID;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -31,4 +31,7 @@ public class AppUser {
     @OneToOne
     @JoinColumn(name = "details_id", unique = true)
     private Details details;
+
+
+
 }

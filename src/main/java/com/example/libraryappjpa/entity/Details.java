@@ -22,6 +22,7 @@ public class Details {
     @Column(unique = true)
     private String email;
 
+
     private String name;
     private LocalDate birthDate;
 
